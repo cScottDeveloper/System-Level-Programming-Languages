@@ -1,0 +1,23 @@
+if you use an @symbol in front of an object, it tells the class you want to use that variable in the object
+if you use two @@symbols then you are referring to an object of the class
+
+LOOPS:
+using the two dots it will put them all on one line and include the 10(inclusive)
+for i in 1..10 do
+print i, " "
+end
+print "\n" can also use puts for a newline
+output: 1 2 3 4 5 6 7 8 9 10
+
+using three dots will not include the 10 (exclusive)
+for i in 1...10 do
+print i, " "
+end
+output: 1 2 3 4 5 6 7 8 9
+
+Fill method:
+a.fill{ |x| x*10}
+a.fill{5}
+
+Yield notes:
+means go to where it is called(the method is called) and yield that result back to the method

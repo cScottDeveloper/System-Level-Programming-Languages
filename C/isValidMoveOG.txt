@@ -1,0 +1,126 @@
+{    int y;
+    int x;
+    if(onBoard(row,col) == true && board[row][col] == EMPTY) {
+        char otherPlayer = BLACK;
+        if (disc == BLACK) {
+            otherPlayer = WHITE;
+        }
+
+        //checks south west from moving north east
+        if(onBoard(row+1,col-1)) {
+            if (board[row + 1][col - 1] == otherPlayer) {
+                for(x = col-2, y = row + 2;onBoard(row,col); x--, y++){
+                    if(onBoard(y,x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        } else if(board[y][x] == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        //moves north-east from moving south west
+        if(onBoard(row-1, col +1)) {//checks to make sure on board
+            if (board[row - 1][col + 1] == otherPlayer) {//if the next player is opposite player
+                for(x = col + 2, y = row - 2;onBoard(row,col); x++, y--){
+                    if(onBoard(y, x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        }
+                        else if(board[y][x] == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        //moves south-east from moving north west
+        if(onBoard(row+1, col+1)) {
+            if (board[row + 1][col + 1] == otherPlayer) {
+                for(x = col + 2, y = row + 2; onBoard(row,col); x++, y++){
+                    if(onBoard(y,x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        }else if(board[y][x] == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        //moves north-west from moving north east
+        if (onBoard(row-1, col-1)) {
+            if (board[row - 1][col - 1] == otherPlayer) {
+                for (x = col-2, y = row-2; onBoard(row, col); x--, y--) {
+                    if (onBoard(y, x)) {
+                        if (board[y][x] == EMPTY) {
+                            break;
+                        } else if (board[y][x] == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        //checks move west is valid move based on search east
+        if(onBoard(row, col + 1)) {
+            if (board[row][col + 1] == otherPlayer) {
+                for(x = col+2, y = row; onBoard(row,col);x++){
+                    //reversed y,x instead of x,y because x is col and y is row order is (row,col) for check
+                    if(onBoard(y,x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        } else if(board[y][x] == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        //check north from moving south -- error occurs here
+        if(onBoard(row-1,col)) {
+            if (board[row - 1][col] == otherPlayer) {
+                for(x = col,y = row-1; onBoard(row,col); y--){
+                    if(onBoard(y,x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        }else if(board[y][x]  == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        //check south from moving north
+        if(onBoard(row+1,col)) {
+            if (board[row + 1][col] == otherPlayer) {
+                for(x = col,y = row + 2; onBoard(row,col); y++){
+                    if(onBoard(y,x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        }else if(board[y][x]  == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        //checks west from moving east
+        if(onBoard(row, col -1)){
+            if(board[row][col-1] == otherPlayer){
+                for (x = col-2, y = row; onBoard(row,col); x--){
+                    if(onBoard(y, x)){
+                        if(board[y][x] == EMPTY){
+                            break;
+                        }else if(board[y][x] == disc){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}

@@ -1,0 +1,21 @@
+Format Specifiers in C
+
+%i		int
+%d		int
+%f		float
+%lf		double
+%L		long double
+%c		char
+%s		string
+%u		unsigned int
+%p		pointer argument
+%z		size_t argument
+
+%e     The scientific notation format specifier.
+%E     The scientific notation format specifier.
+%g     Uses %f or %e, whichever result is shorter.
+%G     Uses %f or %E, whichever result is shorter.
+%o     The unsigned octal format specifier.
+%x     The unsigned hexadecimal format specifier.
+%X     The unsigned hexadecimal format specifier.
+%%     Outputs a percent sign.

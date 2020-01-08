@@ -1,0 +1,18 @@
+$ 	Global variables are prefixed with a dollar sign.
+
+@ 	Instance variables are prefixed with a single @ sign
+
+@@ 	Class variables are prefixed with two @ signs.
+
+? 	As a helpful convention, methods that return Boolean values often have
+	names that end with a question mark.
+
+! 	Method names may end with an exclamation point to indicate that they
+	should be used cautiously. This naming convention is often to
+	distinguish mutator methods that alter the object on which they are
+	invoked from variants that return a modified copy of the original
+	object.
+
+= 	Methods whose names end with an equals sign can be invoked by placing
+	the method name, without the equals sign, on the left side of an
+	assignment operator.
